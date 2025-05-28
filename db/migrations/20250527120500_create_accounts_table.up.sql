@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS accounts (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    auth_id TEXT NOT NULL,
+    email TEXT NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW() NOT NULL
+);

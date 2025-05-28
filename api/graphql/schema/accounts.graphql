@@ -1,0 +1,19 @@
+extend type Query {
+    account(input: AccountInput!): AccountResponse!
+}
+
+input AccountInput {
+    id: String!
+}
+
+type AccountResponse {
+    account: Account!
+}
+
+type Account {
+    id: String!
+    authID: String!
+    email: String!
+    createdAt: Time!
+    updatedAt: Time!
+}

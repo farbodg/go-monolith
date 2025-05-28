@@ -1,0 +1,39 @@
+# .gqlgen.yml config for gqlgen
+#
+# Refer to https://gqlgen.com/config/
+# for detailed .gqlgen.yml documentation.
+
+schema:
+  - schema/schema.graphql
+  - schema/accounts.graphql
+  - schema/payments.graphql
+
+# Let gqlgen know where to put the generated server
+exec:
+  filename: graph/generated.go
+  package: graph
+
+# Let gqlgen know where to put the generated models (if any)
+model:
+  filename: graph/models/generated.go
+  package: models
+
+# Optional, turns on resolver stub generation
+#resolver:
+#  filename: resolver.go
+#  type: Resolver
+
+# Optional, turns on binding to field names by tag provided
+#s truct_tag: json
+
+# Instead of listing out every model like below, you can automatically bind to any matching types
+# within the given path. EXPERIMENTAL in v0.9.1
+autobind: []
+
+# Tell gqlgen about any existing models you want to reuse for
+# graphql. These normally come from the db or a remote api.
+models:
+  Leaderboard:
+    fields:
+      players:
+        resolver: true

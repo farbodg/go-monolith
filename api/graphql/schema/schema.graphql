@@ -1,0 +1,10 @@
+scalar Time
+scalar Upload
+
+type Mutation {
+    NoOp: Boolean # this is so that we can define base type without compiler complaining
+}
+
+type Query {
+    NoOp: Boolean
+}

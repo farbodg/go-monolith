@@ -1,0 +1,20 @@
+extend type Query {
+    payment(input: PaymentInput!): PaymentResponse!
+}
+
+input PaymentInput {
+    id: String!
+}
+
+type PaymentResponse {
+    payment: Payment!
+}
+
+type Payment {
+    id: String!
+    amount: String!
+    referenceID: String!
+    accountID: String!
+    createdAt: Time!
+    updatedAt: Time!
+}
